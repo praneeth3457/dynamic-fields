@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Fields App</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+  <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>
+
+  <script type="text/javascript" src="/public/homeController.js"></script>
+</head>
+<body class="container" ng-app="dynamic-app" ng-controller="homeCtrl">
+
+  <div class="row">
+    <div class="col-xs-12" ng-repeat="data in data">
+      <h2>{{data.title}}</h2>
+      <hr/>
+      <form>
+        <div ng-repeat="field in data.fields">
+
+          <!--FOR INPUT BOX-->
+          <div class="form-group" ng-if="field.type == 'input'">
+            <label for="{{field.id}}">{{field.label}}</label>
+            <input type="text" class="form-control" id="{{field.id}}" ng-model="field.default">
+          </div>
+
+          <!--FOR RADIO BUTTON-->
+          <div class="form-group" ng-if="field.type == 'radio'">
+            <label for="{{field.id}}">{{field.label}}</label>
+            <div class="radio" ng-repeat="values in field.values">
+              <label>
+                <input type="radio" name="{{field.id}}" id="{{values}}" value="{{values}}" ng-checked="values == field.default">
+                {{values}}
+              </label>
+            </div>
+          </div>
+
+          <!--FOR DROPDOWN BUTTON-->
+          <div class="form-group" ng-if="field.type == 'dropdown'">
+            <label for="{{field.id}}">{{field.label}}</label>
+            <select class="form-control" ng-model="field.default" ng-options="values for values in field.values"></select>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
