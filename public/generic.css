@@ -1,0 +1,53 @@
+.timeline {
+  margin-top: 50px;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.li.complete .status:before{
+  border: 2px solid #3AA445;
+}
+.li .status:before {
+  /*background-color: #66DC71;*/
+  border: 2px solid #5D6164;
+  transition: all 200ms ease-in;
+}
+.li:not(:last-child) .status {
+  border-top: 2px solid #5D6164;
+}
+.status {
+  padding: 15px 100px;
+  display: flex;
+  justify-content: center;
+  /*border-top: 2px solid #D6DCE0;*/
+  position: relative;
+  transition: all 200ms ease-in;
+}
+.status:before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  transition: all 200ms ease-in;
+}
+.li .status h4 {
+  color: #5D6164;
+  left: -25%;
+  position: absolute;
+}
+.status h4{
+  font-weight: 600;
+}
+.checked-icon {
+  position: absolute;
+  left: -4%;
+  top: -25%;
+  color: #3AA445;
+}

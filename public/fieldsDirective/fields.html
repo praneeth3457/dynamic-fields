@@ -1,0 +1,23 @@
+
+<!--FOR INPUT BOX-->
+<div class="form-group" ng-if="field.type == 'input'">
+  <label for="{{field.id}}">{{field.label}}</label>
+  <input type="text" class="form-control" id="{{field.id}}" ng-model="field.default">
+</div>
+
+<!--FOR RADIO BUTTON-->
+<div class="form-group" ng-if="field.type == 'radio'">
+  <label for="{{field.id}}">{{field.label}}</label>
+  <div class="radio" ng-repeat="values in field.values">
+    <label>
+      <input type="radio" name="{{field.id}}" id="{{values}}" value="{{values}}" ng-checked="values == field.default">
+      {{values}}
+    </label>
+  </div>
+</div>
+
+<!--FOR DROPDOWN BUTTON-->
+<div class="form-group" ng-if="field.type == 'dropdown'">
+  <label for="{{field.id}}">{{field.label}}</label>
+  <select class="form-control" ng-model="field.default" ng-options="values for values in field.values"></select>
+</div>

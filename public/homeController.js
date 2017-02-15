@@ -1,4 +1,4 @@
-var app = angular.module("dynamic-app", []);
+var app = angular.module("dynamic-app");
 
 app.controller('homeCtrl', ['$scope', '$http', function($scope, $http){
   console.log('Home Controller');

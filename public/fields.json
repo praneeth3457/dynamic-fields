@@ -1,4 +1,5 @@
-[{
+[
+  {
     "title" : "Code Integration",
     "fields" : [
       {
@@ -28,20 +29,86 @@
         "type" : "dropdown",
         "values": ["None", "East", "West", "North", "South"],
         "default" : "None"
-      },
-      {
-        "id" : 1004,
-        "label": "Github Repo",
-        "type" : "input",
-        "values": "",
-        "default" : ""
-      },
-      {
-        "id" : 1005,
-        "label": "Access Token",
-        "type" : "input",
-        "values": "",
-        "default" : ""
       }
     ]
-  }]
+  },
+  {
+      "title" : "Deployment",
+      "fields" : [
+        {
+          "id" : 1003,
+          "label": "Github Type",
+          "type" : "radio",
+          "values": ["public","private"],
+          "default" : "private"
+        },
+        {
+          "id" : 1004,
+          "label": "Location",
+          "type" : "dropdown",
+          "values": ["None", "East", "West", "North", "South"],
+          "default" : "None"
+        },
+        {
+          "id" : 1004,
+          "label": "Github Repo",
+          "type" : "input",
+          "values": "",
+          "default" : ""
+        },
+        {
+          "id" : 1005,
+          "label": "Access Token",
+          "type" : "input",
+          "values": "",
+          "default" : ""
+        }
+      ]
+    },
+    {
+        "title" : "Beta Release",
+        "fields" : [
+
+          {
+            "id" : 1002,
+            "label": "Access Token",
+            "type" : "input",
+            "values": "",
+            "default" : ""
+          },
+          {
+            "id" : 1004,
+            "label": "Location",
+            "type" : "dropdown",
+            "values": ["None", "East", "West", "North", "South"],
+            "default" : "None"
+          }
+        ]
+      },
+      {
+          "title" : "General Availability",
+          "fields" : [
+            {
+              "id" : 1004,
+              "label": "Location",
+              "type" : "dropdown",
+              "values": ["None", "East", "West", "North", "South"],
+              "default" : "None"
+            },
+            {
+              "id" : 1004,
+              "label": "Github Repo",
+              "type" : "input",
+              "values": "",
+              "default" : ""
+            },
+            {
+              "id" : 1005,
+              "label": "Access Token",
+              "type" : "input",
+              "values": "",
+              "default" : ""
+            }
+          ]
+        }
+]
